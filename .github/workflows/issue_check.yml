@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: label 
-        run: echo ${{github.event.issue}}
-#       - id: tolowerCase
-#         uses: ASzc/change-string-case-action@v5
-#         with:
-#           string: ${{github.event.comment.body}}
-#       - id: print 
-#         run: echo ${{steps.tolowerCase.outputs.lowercase}}
+        run: echo ${{github.event.issue.title}}
+      - id: tolowerCase
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{github.event.issue.title}}
+      - id: print 
+        run: echo ${{steps.tolowerCase.outputs.lowercase}}

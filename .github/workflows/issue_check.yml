@@ -1,13 +1,13 @@
 on:
-  push:
-#   issue_comment:
-#     types:
-#       [created]
+#   push:
+  issue_comment:
+    types:
+      [created]
   
 name: "Issue name change"
 jobs:
   build:
-#     if: ${{github.event.comment.body == 'Build website'}}
+    if: ${{github.event.comment.body == 'Build website'}}
     name: Change issue title
     runs-on: ubuntu-latest
     steps:

@@ -9,11 +9,10 @@ jobs:
     if: ${{github.event.comment.body == 'Build website'}}
     name: Change issue title
     runs-on: ubuntu-latest
-      steps: 
-        id: tolowerCase
-        uses: ASzc/change-string-case-action@v5
-        with:
-          string: ${{github.event.label}}
+    steps: 
+      id: tolowerCase
+      uses: ASzc/change-string-case-action@v5
+      with:
+       string: ${{github.event.label}}
         
-        id: print
-        run: echo ${{steps.tolowerCase.outputs.lowercase}}
+      run: echo ${{steps.tolowerCase.outputs.lowercase}}

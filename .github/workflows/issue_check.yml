@@ -10,9 +10,9 @@ jobs:
     name: Change issue title
     runs-on: ubuntu-latest
     steps: 
-      id: tolowerCase
-      uses: ASzc/change-string-case-action@v5
-      with:
-       string: ${{github.event.label}}
-        
-      run: echo ${{steps.tolowerCase.outputs.lowercase}}
+      - id: tolowerCase
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{github.event.label}}
+      - id: print 
+        run: echo ${{steps.tolowerCase.outputs.lowercase}}

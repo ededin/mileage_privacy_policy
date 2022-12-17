@@ -6,15 +6,15 @@ on:
 name: "Issue name change"
 jobs:
   build:
-    if: ${{github.event.comment.body == 'Build website'}}
+#     if: ${{github.event.comment.body == 'Build website'}}
     name: Change issue title
     runs-on: ubuntu-latest
     steps:
       - id: label 
-        run: echo ${{github.event.comment.body}}
-      - id: tolowerCase
-        uses: ASzc/change-string-case-action@v5
-        with:
-          string: ${{github.event.comment.body}}
-      - id: print 
-        run: echo ${{steps.tolowerCase.outputs.lowercase}}
+        run: echo ${{github.event}}
+#       - id: tolowerCase
+#         uses: ASzc/change-string-case-action@v5
+#         with:
+#           string: ${{github.event.comment.body}}
+#       - id: print 
+#         run: echo ${{steps.tolowerCase.outputs.lowercase}}

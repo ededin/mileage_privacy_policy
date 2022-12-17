@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: label 
-        run: echo ${{fromJson(github.event)}}
+        run: echo ${{github.event.issue}}
 #       - id: tolowerCase
 #         uses: ASzc/change-string-case-action@v5
 #         with:
